@@ -1,0 +1,12 @@
+.bg-info {
+    background-color: lightblue!important;
+}
+
+html,
+h1{
+    margin-bottom: 0px !important;
+}
+body {
+    height: 100%;
+    width: 100%;
+}

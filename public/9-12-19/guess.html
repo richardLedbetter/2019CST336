@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="curr-guess">
+        number: <input id="curr_guess_num" type="text" name="FirstName" value=""><br></br>
+    </div>
+    <button id="guess">
+            guess
+        </button>
+    <button id="reset">
+            reset
+        </button>
+    <div id="txt">
+
+    </div>
+    <div id="num_gen">
+
+    </div>
+    <script>
+        newgame();
+
+        function newgame() {
+            var num_guess = 7;
+            var random = (Math.random() * 98) + 1;
+            random = parseInt(random, 10)
+
+            document.getElementById("num_gen").innerHTML = ("num:" + random)
+
+            document.getElementById('guess').addEventListener('click', function(e) {
+                num_guess--;
+                curr_guess = document.getElementById('curr_guess_num').value;
+                if (parseInt(curr_guess) == random) {
+                    document.getElementById("txt").innerHTML = ("you win")
+                }
+                else {
+                    if (num_guess == 0) {
+                        newgame();
+                    }
+                    document.getElementById("txt").innerHTML = ("guesses left : " + num_guess)
+                }
+
+                //document.write("guesses left : " + num_guess);
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up Page </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+
+
+    </head>
+    <body class="text-center">
+        <h1 class="jumbotron">Sign up</h1>
+        
+        <form id="signupForm" class="container" method="get" action="welcome.html">
+            First Name: <input type="text"  name="fName"><br>
+            Last Name:  <input type="text"  name="lName"><br>
+            Gender:     <input id="choice" type="radio" name="gender" value="m"> Male
+                        <input id="choice" type="radio" name="gender" value="f"> Female<br>
+                        
+            Zip Code:   <input type="text"  name="zip" id="zip">
+                        <span id="zipcodeNotFound"></span><br>
+            <div class="border border-primary">
+                City:       <span id="city"></span><br>
+                Latitude:   <span id="latitude"></span><br>
+                Longitude:  <span id="longitude"></span><br>
+            </div>
+            State: <select id="state" name="state"></select><br />
+            
+            Select a County: <select id="county" name="county"></select><br><br>
+            
+            Desired Username: <input type="text"    id="username" name="username"><br>
+                              <span id="usernameError"></span><br>
+            Password:         <input type="password"    id="password" name="password"><br>
+                              <span id="passwordLength"></span><br>
+            Password Again:   <input type="password"    id="passwordAgain"><br>
+                              <span id="passwordAgainError"></span> <br /><br>
+    
+            <input id="submit" type="submit" value="Sign Up!"><br>
+            <div id="terms">By clicking the Sign Up button, you agree to our
+            Terms & Conditions, and Privacy Policy</div>
+        </form>
+        
+    <script src="js/functions.js"></script>
+    </body>
+</html>

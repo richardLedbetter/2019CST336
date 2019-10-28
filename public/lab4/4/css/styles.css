@@ -1,0 +1,48 @@
+.container {
+    width: 500px;
+    clear: both;
+    border-style: solid;
+    background-color: lightgray;
+    padding: 25px 50px 25px 50px;
+}
+
+.container input {
+    width: 100%;
+    clear: both;
+    border-radius: 25px;
+    border: 2px solid gray;
+
+}
+
+body{
+    text-align:center;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+}
+
+.jumbotron {
+    background-color:#fe9f7c
+}
+
+input:focus {
+    background-color: yellow;
+}
+
+#choice {
+    width: auto;
+}
+
+
+h1 {
+    margin-bottom: 0px !important;
+    text-align: center;
+}
+
+#terms {
+    padding-top: 6px;
+    font-size: 13px;
+}
+
+text {
+    text-align: left;
+}

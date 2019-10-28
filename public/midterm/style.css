@@ -1,0 +1,9 @@
+#likes, #dislikes{
+    display: inline;
+}
+#comments{
+    display: inline;        
+}
+#content{
+    text-align: center;
+}

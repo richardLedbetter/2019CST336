@@ -1,0 +1,32 @@
+.bg-info {
+    background-color: lightblue!important;
+}
+img {
+ background-color: lightblue!important;
+  width: 20%;
+  height:20%;
+}
+html,
+h1{
+    background-color: lightblue!important;
+    margin-bottom: 0px !important;
+     height: 100%;
+    width: 100%;
+}
+h2{
+    display: inline !important;
+    height: 100%;
+    width: 100%;
+}
+h3{
+    background-color: lightblue!important;
+    display: inline !important;
+    margin-bottom: 0px !important;
+     height: 100%;
+    width: 100%;
+}
+body {
+    background-color: lightblue!important;
+    height: 100%;
+    width: 100%;
+}

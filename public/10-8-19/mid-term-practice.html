@@ -1,0 +1,226 @@
+<html>
+
+<head>
+
+    <title>CST336 Midterm Exam Practice</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <style>
+        .dropdown-content a:hover {background-color: #ddd;}
+        
+        .dropdown:hover .dropdown-content {display: block;}
+        
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        h3 {
+            color: red!important;
+        }
+        .dropbtn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+        }
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: relative;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        tr,
+        td {
+
+            border: 1px gray solid;
+
+            text-align: right;
+
+            padding: 5px;
+
+        }
+
+        body,
+        th {
+
+            text-align: center;
+
+        }
+
+        table {
+
+            margin: 0 auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="jumbotron"> End-of-Summer Sale! </h1>
+
+    <h2> Cart </h2>
+
+    <table>
+
+        <tr>
+
+            <th>Product</th>
+
+            <th>Unit Price</th>
+
+            <th> Quantity </th>
+
+            <th>Total</th>
+
+        </tr>
+
+        <tr>
+
+            <td id= "item_1"></td>
+
+            <td id = "price_1"> </td>
+
+            <td id = "amount_1"><input type="text" size="5"> </td>
+
+            <td> </td>
+
+        </tr>
+        <tr>
+
+            <td id = "item_2"></td>
+
+            <td id = "price_2"> </td>
+
+            <td id = "amount_2"><input type="text" size="5"> </td>
+
+            <td> </td>
+
+        </tr>
+        <tr>
+
+            <td>Discount</td>
+
+            <td> </td>
+
+            <td> </td>
+
+            <td> </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Shipping</td>
+
+            <td> </td>
+
+            <td> </td>
+
+            <td> </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Subtotal</td>
+
+            <td> </td>
+
+            <td> </td>
+
+            <td> </td>
+
+        </tr>
+
+
+
+        <tr>
+
+            <td>Tax (10%)</td>
+
+            <td></td>
+
+            <td></td>
+
+            <td> </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Total</td>
+
+            <td></td>
+
+            <td></td>
+
+            <td> </td>
+
+        </tr>
+
+    </table>
+
+    <br><br>
+
+    <strong>Promo Code: </strong> <input type="text">
+    <button class="apply">apply</button>
+
+
+    <h3>Shipping & handling</h3>
+    <div class="dropdown">
+        <button class="dropbtn">shipping</button>
+        <div class="dropdown-content">
+            <a href="#">one day shipping</a>
+            <a href="#">three day shipping</a>
+            <a href="#">regular</a>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        let test = "a";
+         loadDoc(test);
+         
+         function loadDoc(test) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        test = JSON.parse(this.responseText);
+                        console.log(test);
+                        var tmp = parseInt((Math.random()*10)%5);
+                        console.log(test[tmp]);
+                        document.getElementById("item_1").innerHTML = test[tmp]["productName"];
+                        document.getElementById("price_1").innerHTML = test[tmp]["price"];
+                        document.getElementById("amount_1").textContent = test[tmp]["qty"];
+                        var tmp = parseInt((Math.random()*10)%5);
+                        document.getElementById("item_2").innerHTML = test[tmp]["productName"];
+                        document.getElementById("price_2").innerHTML = test[tmp]["price"];
+                        document.getElementById("amount_2").textContent = test[tmp]["qty"];
+                    }
+                };
+                xhttp.open("POST", "https://cst336.herokuapp.com/projects/api/promo_products.php", true);
+                xhttp.send();
+                
+            }
+         $(".apply").on("click",function (){
+                alert("Confirm purchse");
+            });
+    });
+    </script>
+</body>
+
+</html>
